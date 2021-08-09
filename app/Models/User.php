@@ -41,13 +41,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    const gender = [
+    const GENDER = [
         'male' => 1,
         'female' => 0,
         'other' => 2,
     ];
 
-    const role = [
+    const ROLE = [
         'mentor' => 1,
         'student' => 0,
         'other' => 2,
