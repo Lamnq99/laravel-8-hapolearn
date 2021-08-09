@@ -17,6 +17,7 @@ class CreateUserCoursesTable extends Migration
             $table->unsignedInteger('course_id');
             $table->unsignedInteger('user_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

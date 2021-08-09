@@ -18,6 +18,7 @@ class CreateUserLessonsTable extends Migration
             $table->unsignedInteger('lesson_id');
             $table->integer('learned')->default(0)->nullable()->comment("1: hoc; 2: chua hoc");
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

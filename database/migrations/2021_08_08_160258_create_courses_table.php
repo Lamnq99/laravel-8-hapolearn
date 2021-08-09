@@ -24,6 +24,7 @@ class CreateCoursesTable extends Migration
             $table->float('price')->default(0);
             $table->text('description')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

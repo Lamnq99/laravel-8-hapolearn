@@ -17,6 +17,7 @@ class CreateTagCoursesTable extends Migration
             $table->unsignedInteger('course_id');
             $table->unsignedInteger('tag_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

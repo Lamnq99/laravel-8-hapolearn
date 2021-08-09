@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFeedBacksTable extends Migration
+class CreateFeedbacksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -21,6 +21,7 @@ class CreateFeedBacksTable extends Migration
             $table->string('content')->nullable();
             $table->float('rate')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
