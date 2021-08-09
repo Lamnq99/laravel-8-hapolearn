@@ -13,7 +13,7 @@ class User extends Authenticatable
     use HasFactory;
     use Notifiable;
     use SoftDeletes;
-    
+
     /**
      * The attributes that are mass assignable.
      *
@@ -47,13 +47,12 @@ class User extends Authenticatable
     const GENDER = [
         'male' => 1,
         'female' => 0,
-        'other' => 2,
+        'other' => 2
     ];
 
     const ROLE = [
         'mentor' => 1,
-        'student' => 0,
-        'other' => 2,
+        'student' => 0
     ];
 
     public function courses()
