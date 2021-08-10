@@ -2,7 +2,7 @@
 $body-bg: #f8fafc;
 
 // Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
+$font-family-sans-serif: "Nunito", sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
@@ -17,3 +17,64 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+@font-face {
+    font-family: "utm_bryantlgregular";
+    src: url(../assets/fonts/UTM_BryantLG.ttf) format("woff2"), 
+        url(../assets/fonts/UTM_BryantLG_B.ttf) format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin txt-learnAny-atHapo {
+    font-family: $font_UTM_BryantLG;
+    color: $txt-bg-color;
+    text-decoration: none;
+}
+
+@mixin three-dot {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+@mixin bg-card {
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+$font_UTM_BryantLG: "utm_bryantlgregular";
+$icon-color: #969494;
+$border-feedback: #e2e2e2;
+$bg-color: #b2d235;
+$bg-color2: #90ab26;
+$txt-color: #505353;
+$txt-bg-color: #11114e;
+$box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+$border-take-courses: 0.3px solid #d2d235;
+$box-shadow-btn: inset 0px 1.5px 2px #6f8710;
+$text-shadow-btn: 1px 1px #6f8710;
+$font-OpenS: "Open Sans", sans-serif;
+$font-Roboto: "Roboto", sans-serif;
+$bg-html: #3f6185;
+$bg-laravel: #dc594c;
+$bg-php: #556598;
+$bg-css: #24abe2;
+$bg-ruby: #e14e40;
+$bg-java: #1b75bb;
+$bg-header: #f8f9fa;
+$bg-grey: #e5e5e5;
+$color-feedback: #707575;
+$color-shadow-member: #e3e7e7;
+$color-footer: #454545;
+$bg-chat: #f1f0f0;
+$mess-color: #3184f7;
+$gg-color: #dc4e41;
+$face-color: #3b5999;
+$input-color: #f2f2f2;

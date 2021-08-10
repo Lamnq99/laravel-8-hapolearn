@@ -1,0 +1,261 @@
+.modal-dialog {
+  margin: 6.5rem auto;
+
+  .modal-content {
+    width: 95%;
+    margin: auto;
+    padding-bottom: 25px;
+
+    .modal-header {
+      padding: 0;
+    }
+  }
+}
+
+.tabs-login-register {
+  width: 100%;
+
+  .nav-item {
+    width: 50%;
+    padding: 0;
+    text-align: center;
+    border-radius: 0;
+
+    a {
+      color: $bg-color;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-family: $font_UTM_BryantLG;
+      font-size: 25px;
+      padding: 10px 0;
+    }
+  }
+}
+
+.btn-close {
+  margin: 0;
+  padding: 0px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  z-index: 1;
+  opacity: 1;
+  text-shadow: none;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.nav-tabs .nav-link {
+  border: 0;
+
+  &:hover {
+    background-color: white;
+  }
+}
+
+.nav-tabs .nav-link.active {
+  color: white;
+  background-color: $bg-color;
+}
+
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
+  border-color: unset;
+}
+
+.tab-content {
+  width: 93%;
+  margin: auto;
+
+  .tab-pane {
+    margin: 15px 0;
+  }
+}
+
+.form-login,
+.form-register {
+  font-family: $font_UTM_BryantLG;
+
+  .label-username,
+  .label-password,
+  .label-email,
+  .label-repassword {
+    width: 100%;
+    margin: 5px 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: $txt-color;
+  }
+
+  .txt-username,
+  .txt-password,
+  .txt-email,
+  .txt-repassword {
+    width: 100%;
+    line-height: 40px;
+    background-color: $input-color;
+    border: 1px solid $border-feedback;
+  }
+}
+
+.option-login {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  font-size: 23px;
+  font-weight: 600;
+
+  .box-remember {
+    position: relative;
+    display: unset;
+    padding: 0;
+
+    .remember-me-checkbox {
+      position: unset;
+      margin: 0;
+    }
+
+    .form-check-label {
+      cursor: pointer;
+      font-size: 18px;
+      color: $txt-color;
+    }
+  }
+
+  .forgot-pass {
+    color: $bg-color;
+    text-decoration: underline;
+    font-size: 18px;
+  }
+}
+
+.btn-login,
+.btn-register {
+  text-transform: uppercase;
+  color: white;
+  padding: 7px 20px;
+  margin: 25px auto;
+  background-color: $bg-color;
+  box-shadow: $box-shadow-btn;
+  display: block;
+  text-align: center;
+  border-radius: 35px;
+  width: 35%;
+  font-size: 18px;
+  font-weight: 600;
+
+  &:hover {
+    text-decoration: none;
+    color: $txt-bg-color;
+  }
+}
+
+.login-with {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 23px 0;
+
+  p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: $font_UTM_BryantLG;
+    color: $txt-color;
+  }
+}
+
+.login-with::before,
+.login-with::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid $txt-color;
+}
+
+.login-with::before {
+  margin-right: 0.25em;
+}
+
+.login-with::after {
+  margin-left: 00.25em;
+}
+
+.with-gg,
+.with-face {
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+
+  .icon-gg,
+  .icon-face {
+    padding: 15px;
+  }
+}
+
+.with-gg {
+  background-color: $gg-color;
+  padding: 2px 0;
+  border-radius: 5px;
+}
+
+.with-face {
+  background-color: $face-color;
+  padding: 2px 0;
+  border-radius: 5px;
+}
+
+.remember-me-checkbox {
+  position: relative;
+  cursor: pointer;
+}
+.remember-me-checkbox:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: -3px;
+  top: 9px;
+  border: 1px solid $txt-color;
+  border-radius: 5px;
+  background-color: white;
+}
+.remember-me-checkbox:checked:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 9px;
+  left: -3px;
+  border: none;
+  background-color: $bg-color;
+}
+.remember-me-checkbox:checked:after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 13px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 11px;
+  left: 3px;
+}
+
+@media only screen and (max-width: 768px) {
+  .modal-dialog {
+    margin: 10rem auto;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .modal-dialog {
+    margin: 3.5rem auto;
+  }
+}
