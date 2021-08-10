@@ -2,7 +2,7 @@
 
 @section('content')
 
-<header class="header container-fluid">
+<header class="header container-fluid p-0">
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <div class="logo">
             <a class="navbar-brand" href="#">
@@ -38,7 +38,7 @@
     </nav>
 </header>
 
-<section class="banner container-fluid">
+<section class="banner container-fluid p-0">
     <div class="bg-banner"></div>
     <div class="banner-contents">
         <p class="learn-any">Learn anytime, Anywhere</p>
@@ -423,6 +423,8 @@
             </div>
             <div class="tab-content">
                 <div id="login" class="container tab-pane active">
+                    {{--  --}}
+
                     <form class="form-login" action="" method="post" onsubmit="return false">
                         <label class="label-username">Username:</label>
                         <input class="txt-username" type="text"><br><br>
@@ -437,9 +439,11 @@
                             <a href="#" onclick="return false" class="forgot-pass">Forgot password</a>
                         </div>
                         <div>
-                            <a href="#" onclick="return false" class="btn-login">login</a>
+                            <input type="submit" name="submit" value="login"  class="btn-login">
                         </div>
                     </form>
+
+                    {{--  --}}
                     <div class="login-with">
                         <p>Login with</p>
                     </div>
@@ -457,7 +461,7 @@
                         <label class="label-repassword">Repeat Password:</label>
                         <input class="txt-repassword" type="text">
                         <div>
-                            <a href="#" onclick="return false" class="btn-register">register</a>
+                            <input type="submit" name="submit" value="register" class="btn-register">
                         </div>
                     </form>
                 </div>

@@ -12,9 +12,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/header.js') }}"></script>
-    <script src="{{ asset('js/messenger.js') }}"></script>
-    <script src="{{ asset('js/popover.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -29,8 +26,8 @@
 </head>
 
 <body>
-    <div id="app">
-        {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    {{-- <div id="app">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -43,10 +40,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
+                    <ul class="navbar-nav mr-auto"></ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -84,12 +78,11 @@
                     </ul>
                 </div>
             </div>
-        </nav> --}}
-
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+        </nav>
+    </div> --}}
+    <main class="py-4">
+        @yield('content')
+    </main>
 </body>
 
 </html>

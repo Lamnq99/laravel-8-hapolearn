@@ -5,6 +5,10 @@
  */
 
 require('./bootstrap');
+require('./components/header');
+require('./components/popover');
+require('./components/messenger');
+
 
 window.Vue = require('vue').default;
 
@@ -30,5 +34,3 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
-
-

@@ -16,9 +16,11 @@ $(document).ready(function () {
     if ($(".navbar-toggler-icon").css("display") == "inline-block") {
       $(".navbar-toggler-icon").css({ "display": "none" })
       $(".img-close-header").css({ "display": "inline-block" })
+      $("body").css({"display": "none"})
     } else {
       $(".navbar-toggler-icon").css({ "display": "inline-block" })
       $(".img-close-header").css({ "display": "none" })
+      $("body").css({"display": "block"})
     }
   });
 });

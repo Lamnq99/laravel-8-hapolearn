@@ -1882,6 +1882,12 @@ __webpack_require__.r(__webpack_exports__);
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./components/header */ "./resources/js/components/header.js");
+
+__webpack_require__(/*! ./components/popover */ "./resources/js/components/popover.js");
+
+__webpack_require__(/*! ./components/messenger */ "./resources/js/components/messenger.js");
+
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js").default;
 /**
  * The following block of code may be used to automatically register your
@@ -1947,6 +1953,90 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/header.js":
+/*!*******************************************!*\
+  !*** ./resources/js/components/header.js ***!
+  \*******************************************/
+/***/ (() => {
+
+$('.navbar-light .navbar-nav .nav-link').on('click', function () {
+  $('.navbar-light .navbar-nav .nav-link').removeClass('active');
+  $(this).addClass('active');
+});
+$(document).ready(function () {
+  $('.btn-header').click(function () {
+    if ($(".collapse").hasClass("show")) {
+      $(".collapse").removeClass("show");
+      $(".navbar-toggler-icon").css({
+        "display": "inline-block"
+      });
+      $(".img-close-header").css({
+        "display": "none"
+      });
+    }
+  });
+  $('.btn-menu-header').click(function () {
+    if ($(".navbar-toggler-icon").css("display") == "inline-block") {
+      $(".navbar-toggler-icon").css({
+        "display": "none"
+      });
+      $(".img-close-header").css({
+        "display": "inline-block"
+      });
+    } else {
+      $(".navbar-toggler-icon").css({
+        "display": "inline-block"
+      });
+      $(".img-close-header").css({
+        "display": "none"
+      });
+    }
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/messenger.js":
+/*!**********************************************!*\
+  !*** ./resources/js/components/messenger.js ***!
+  \**********************************************/
+/***/ (() => {
+
+$(document).ready(function () {
+  $("#messenger").click(function () {
+    if ($("#messenger-box").css("display") == "none") {
+      $("#messenger-box").css({
+        "display": "flex"
+      });
+    } else if ($("#messenger-box").css("display") == "flex") {
+      $("#messenger-box").css({
+        "display": "none"
+      });
+    }
+  });
+  $(".icon-close").click(function () {
+    $("#messenger-box").css({
+      "display": "none"
+    });
+  });
+});
+$(document).on('click', '.pagination a', function () {//your code
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/popover.js":
+/*!********************************************!*\
+  !*** ./resources/js/components/popover.js ***!
+  \********************************************/
+/***/ (() => {
+
+$(function () {
+  $('[data-toggle="popover"]').popover();
+});
 
 /***/ }),
 
