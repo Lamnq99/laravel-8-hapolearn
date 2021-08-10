@@ -10,13 +10,6 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/header.js') }}"></script>
-    <script src="{{ asset('js/messenger.js') }}"></script>
-    <script src="{{ asset('js/popover.js') }}"></script>
-
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -90,6 +83,9 @@
         @yield('content')
     </main>
     </div>
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
 </body>
 
 </html>
