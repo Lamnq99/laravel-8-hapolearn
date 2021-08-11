@@ -2,41 +2,7 @@
 
 @section('content')
 
-<header class="header container-fluid p-0">
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <div class="logo">
-            <a class="navbar-brand" href="#">
-                <img src="images/hapo_learn.png" class="d-inline-block align-top img-logo" alt="logo-hapo-learn">
-            </a>
-        </div>
-        <div class="btn-navbar">
-            <button class="navbar-toggler btn-menu-header" type="button" data-toggle="collapse"
-                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                <img src="images/close_header.png" class="img-close-header .hidden-icon" alt="close">
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link text-secondary active btn-header" href="#">Home<span
-                                class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-secondary btn-header" href="#">All Courses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-secondary btn-header" href="#" data-toggle="modal"
-                            data-target="#myModal">Login/Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-secondary btn-header" href="#">Profile</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
+@include('hapolearn.header')
 
 <section class="banner container-fluid p-0">
     <div class="bg-banner"></div>
@@ -346,50 +312,7 @@
     </div>
 </section>
 
-<footer class="container-fluid">
-    <div class="content">
-        <div class="logo">
-            <img class="logo-footer" src="images/hapo_learn_white.png" alt="logo HapoLearn">
-            <p class="logo-sub">Interactive lessons, "on-the-go"<br>practice, peer support.</p>
-        </div>
-        <div class="title-footer">
-            <table class="table">
-                <tr>
-                    <td class="td-left">Home</td>
-                    <td>Contact</td>
-                </tr>
-                <tr>
-                    <td class="td-left">Features</td>
-                    <td>Terms of Use</td>
-                </tr>
-                <tr>
-                    <td class="td-left">Courses</td>
-                    <td>FAQ</td>
-                </tr>
-                <tr>
-                    <td class="td-left">Blog</td>
-                </tr>
-            </table>
-        </div>
-        <div class="social-footer">
-            <a href="#" onclick="return false" data-toggle="popover" data-trigger="hover" data-placement="bottom"
-                data-content="facebook.com/tuyen.dung.haposoft">
-                <img class="img-icon" src="images/fb_icon.png" alt="icon-face">
-            </a>
-            <a href="#" onclick="return false" data-toggle="popover" data-trigger="hover" data-placement="bottom"
-                data-content="+84-85-645-9898">
-                <img class="img-icon" src="images/phone_icon.png" alt="phone_icon">
-            </a>
-            <a href="#" onclick="return false" data-toggle="popover" data-trigger="hover" data-placement="bottom"
-                data-content="info@haposoft.com">
-                <img class="img-icon" src="images/email_icon.png" alt="email_icon">
-            </a>
-        </div>
-    </div>
-    <div class="row copyrighted">
-        <p class="copyrighted-content">© 2020 HapoLearn, Inc. All rights reserved.</p>
-    </div>
-</footer>
+@include('hapolearn.footer')
 
 <img src="images/messenger.png" alt="messenger" class="messenger" id="messenger">
 <div class="messenger-box" id="messenger-box">
@@ -422,49 +345,8 @@
                 <img src="images/close-login.png" class="btn-close" alt="close" data-dismiss="modal" aria-label="Close">
             </div>
             <div class="tab-content">
-                <div id="login" class="container tab-pane active">
-                    {{--  --}}
-
-                    <form class="form-login" action="" method="post" onsubmit="return false">
-                        <label class="label-username">Username:</label>
-                        <input class="txt-username" type="text"><br><br>
-                        <label class="label-password">Password:</label>
-                        <input class="txt-password" type="text">
-                        <div class="option-login">
-                            <div class="form-check box-remember">
-                                <input class="form-check-input remember-me-checkbox" type="checkbox" value="true"
-                                    id="remember-me">
-                                <label class="form-check-label" for="remember-me">Remember me
-                            </div>
-                            <a href="#" onclick="return false" class="forgot-pass">Forgot password</a>
-                        </div>
-                        <div>
-                            <input type="submit" name="submit" value="login"  class="btn-login">
-                        </div>
-                    </form>
-
-                    {{--  --}}
-                    <div class="login-with">
-                        <p>Login with</p>
-                    </div>
-                    <p class="with-gg"><i class="fab fa-google-plus-g fa-lg icon-gg"></i>Google</p>
-                    <p class="with-face"><i class="fab fa-facebook-f fa-lg icon-face"></i></i>Facebook</p>
-                </div>
-                <div id="register" class="container tab-pane">
-                    <form class="form-register" action="" method="post" onsubmit="return false">
-                        <label class="label-username">Username:</label>
-                        <input class="txt-username" type="text"><br><br>
-                        <label class="label-email">Email:</label>
-                        <input class="txt-email" type="text"><br><br>
-                        <label class="label-password">Password:</label>
-                        <input class="txt-password" type="text"><br><br>
-                        <label class="label-repassword">Repeat Password:</label>
-                        <input class="txt-repassword" type="text">
-                        <div>
-                            <input type="submit" name="submit" value="register" class="btn-register">
-                        </div>
-                    </form>
-                </div>
+                @include('auth.login')
+                @include('auth.register')
             </div>
         </div>
     </div>
