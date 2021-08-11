@@ -1,3 +1,4 @@
+@extends('layouts.app')
 <div id="register" class="container tab-pane">
     <form class="form-register" action="{{ route('register') }}" method="POST">
         @csrf

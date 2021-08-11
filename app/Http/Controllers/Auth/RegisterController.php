@@ -30,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/hapolearn';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -55,8 +55,6 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed']
         ]);
-        //return var_dump($data);
-
     }
 
     /**
@@ -67,6 +65,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        var_dump($data);
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
