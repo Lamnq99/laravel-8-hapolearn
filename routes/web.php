@@ -17,13 +17,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
-
-
 Auth::routes();
-
-Route::get('hapolearn', [HapoController::class, 'index']);
-
-//Route::post('register', 'App\Http\Controllers\Auth\RegisterController@register')->name('register_custome');
