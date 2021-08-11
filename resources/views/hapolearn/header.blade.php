@@ -33,3 +33,5 @@
         </div>
     </nav>
 </header>
+
+@include('auth.modal')
