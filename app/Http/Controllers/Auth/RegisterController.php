@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use SebastianBergmann\Environment\Console;
 
 class RegisterController extends Controller
 {
@@ -29,13 +30,14 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/hello';
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
+
     public function __construct()
     {
         $this->middleware('guest');
@@ -43,11 +45,10 @@ class RegisterController extends Controller
 
     public function register(RequestRegister $request)
     {
-        //$request -> password = bcrypt($request -> password);
         User::create([
             'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password)
+            'email' => $request->emailUser,
+            'password' => Hash::make($request->passwordregis)
         ]);
         return redirect()->back();
     }
@@ -60,7 +61,6 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        dd(123456);
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],

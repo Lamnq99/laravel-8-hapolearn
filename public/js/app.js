@@ -1888,6 +1888,8 @@ __webpack_require__(/*! ./components/popover */ "./resources/js/components/popov
 
 __webpack_require__(/*! ./components/messenger */ "./resources/js/components/messenger.js");
 
+__webpack_require__(/*! ./components/modal */ "./resources/js/components/modal.js");
+
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js").default;
 /**
  * The following block of code may be used to automatically register your
@@ -2024,6 +2026,32 @@ $(document).ready(function () {
   });
 });
 $(document).on('click', '.pagination a', function () {//your code
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/modal.js":
+/*!******************************************!*\
+  !*** ./resources/js/components/modal.js ***!
+  \******************************************/
+/***/ (() => {
+
+$(document).ready(function () {
+  if ($(".input-register").hasClass("is-invalid")) {
+    $("#myModal").modal("show");
+    $("#login").removeClass("active");
+    $("#nav-login").removeClass("active");
+    $("#register").addClass("active");
+    $("#nav-regis").addClass("active");
+  }
+
+  if ($(".input-login").hasClass("is-invalid-login")) {
+    $("#myModal").modal("show");
+    $("#register").removeClass("active");
+    $("#nav-regis").removeClass("active");
+    $("#login").addClass("active");
+    $("#nav-login").addClass("active");
+  }
 });
 
 /***/ }),

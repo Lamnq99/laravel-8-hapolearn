@@ -24,9 +24,18 @@ class RequestRegister extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required | string | min:4 | max:255',
-            'email' => 'required | string | email | max:255 | unique:users',
-            'password' => 'required | string | min:8 | confirmed'
+            'name' => ['required', 'string', 'min:4 ', 'max:255'],
+            'emailUser' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
+            'passwordregis' => ['required', 'string', 'min:8'],
+            'password_confirmation' => ['required', 'same:passwordregis']
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'passwordregis.required' => "The password field is required.",
+            'password_confirmation.same' => "The confirm password does not match."
         ];
     }
 }

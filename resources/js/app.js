@@ -8,6 +8,7 @@ require('./bootstrap');
 require('./components/header');
 require('./components/popover');
 require('./components/messenger');
+require('./components/modal');
 
 
 window.Vue = require('vue').default;

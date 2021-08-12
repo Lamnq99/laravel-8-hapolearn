@@ -249,6 +249,16 @@
   left: 3px;
 }
 
+.err-login {
+  color: $red;
+  display: flex;
+  justify-content: center;
+}
+
+.invalid-feedback {
+  font-size: 100%;
+}
+
 @media only screen and (max-width: 768px) {
   .modal-dialog {
     margin: 10rem auto;

@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\HapoController;
-use App\Http\Controllers\HapoRegisterController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,5 +19,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('logout', [LogoutController::class, 'getLogout'])->name('logout');
 
 Auth::routes();

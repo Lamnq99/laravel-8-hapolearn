@@ -21,17 +21,24 @@
                     <li class="nav-item">
                         <a class="nav-link text-secondary btn-header" href="#">All Courses</a>
                     </li>
+                    @guest
                     <li class="nav-item">
                         <a class="nav-link text-secondary btn-header" href="#" data-toggle="modal"
                             data-target="#myModal">Login/Register</a>
                     </li>
+                    @endguest
                     <li class="nav-item">
                         <a class="nav-link text-secondary btn-header" href="#">Profile</a>
                     </li>
+                    @auth
+                    <li class="nav-item">
+                        <a class="nav-link text-secondary btn-header" href="/logout">Logout</a>
+                    </li>
+                    @endauth
                 </ul>
             </div>
         </div>
     </nav>
 </header>
 
-@include('auth.modal')
+@include('layouts.modal')

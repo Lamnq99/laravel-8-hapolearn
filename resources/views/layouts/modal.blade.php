@@ -4,10 +4,10 @@
             <div class="modal-header">
                 <ul class="nav nav-tabs tabs-login-register" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#login">login</a>
+                        <a id="nav-login" class="nav-link active" data-toggle="tab" href="#login">login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#register">register</a>
+                        <a id="nav-regis" class="nav-link" data-toggle="tab" href="#register">register</a>
                     </li>
                 </ul>
                 <img src="images/close-login.png" class="btn-close" alt="close" data-dismiss="modal" aria-label="Close">

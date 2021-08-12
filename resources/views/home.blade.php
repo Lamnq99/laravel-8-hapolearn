@@ -45,9 +45,6 @@
                     </p>
                     <a href="#" class="btn btn-take-course">Take This Course</a>
                 </div>
-                <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-                    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-                    crossorigin="anonymous" />
             </div>
         </div>
         <div class="col-sm-4 col-courses">
@@ -315,7 +312,5 @@
 @include('layouts.footer')
 
 @include('layouts.messenger')
-
-@include('auth.modal')
 
 @endsection
