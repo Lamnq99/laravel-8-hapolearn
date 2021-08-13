@@ -3,7 +3,7 @@ $('.navbar-light .navbar-nav .nav-link').on('click', function () {
   $(this).addClass('active');
 });
 
-$(document).ready(function () {
+$(function () {
   $('.btn-header').click(function () {
     if ($(".collapse").hasClass("show")) {
       $(".collapse").removeClass("show");
