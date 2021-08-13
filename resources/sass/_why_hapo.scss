@@ -1,0 +1,147 @@
+.why-hapo {
+  width: 100%;
+  padding: 0;
+  margin-top: 130px;
+  background-image: url("../assets/images/bg_why_hapo.png");
+  background-size: cover;
+  position: relative;
+
+  .img-laptop {
+    background-image: url("../assets/images/laptop.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: -10em;
+    width: 248px;
+    height: 370px;
+  }
+}
+
+.row-why-hapo {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  text-align: center;
+  padding-top: 8em;
+  padding-bottom: 1em;
+
+  .col-left {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 50%;
+    margin-bottom: 3em;
+
+    .txt-why-hapo {
+      font-size: 70px;
+      font-weight: 600;
+      color: white;
+      -webkit-text-stroke-width: 1px;
+      margin: 0;
+      font-family: $font_UTM_BryantLG;
+      text-align: right;
+      width: 79%;
+    }
+
+    .txt-content {
+      color: white;
+      font-size: 20px;
+      font-family: $font_UTM_BryantLG;
+    }
+  }
+
+  .col-right {
+    display: flex;
+    align-items: center;
+    width: 50%;
+
+    img {
+      width: 75%;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .why-hapo {
+    .img-laptop {
+      top: -8em;
+      width: 175px;
+      height: 262px;
+    }
+  }
+
+  .row-why-hapo {
+    max-width: 100%;
+    padding-top: 10em;
+
+    .col-left {
+      justify-content: center;
+      width: 65%;
+      margin-bottom: 1em;
+
+      .txt-why-hapo {
+        font-size: 50px;
+        position: absolute;
+        top: 1em;
+        right: 3em;
+        -webkit-text-stroke-width: 2px;
+        font-weight: unset;
+      }
+
+      .txt-content {
+        font-size: 16px;
+      }
+    }
+
+    .col-right {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .why-hapo {
+    margin-top: 130px;
+
+    .img-laptop {
+      top: -8em;
+      width: 175px;
+      height: 262px;
+    }
+  }
+
+  .row-why-hapo {
+    flex-direction: column;
+
+    .col-left {
+      align-items: center;
+      width: 100%;
+      margin-top: 1em;
+      margin-bottom: 0;
+
+      .txt-why-hapo {
+        font-size: 40px;
+        top: 1em;
+        right: 1em;
+        width: 50%;
+        text-align: left;
+      }
+
+      .txt-content {
+        font-size: 14px;
+      }
+    }
+
+    .col-right {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

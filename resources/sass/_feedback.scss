@@ -1,0 +1,263 @@
+.feedback {
+  margin: 4em auto;
+
+  .row-feedback-title {
+    justify-content: center;
+
+    .feedback-title {
+      font-size: 80px;
+      color: $txt-bg-color;
+      font-weight: 900;
+      font-family: $font_UTM_BryantLG;
+      border-bottom: 5px $bg-color solid;
+      -webkit-text-stroke-width: 2px;
+    }
+  }
+
+  .row-feedback-sub {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+
+    .feedback-sub {
+      color: $txt-color;
+      margin: 15px 0;
+      font-family: $font_UTM_BryantLG;
+      font-size: 25px;
+      font-weight: 600;
+    }
+  }
+}
+
+.slide-feedback-con {
+  width: 100%;
+
+  .carousel-inner {
+    width: 75%;
+    margin: auto;
+    display: flex;
+
+    .carousel-item {
+      width: 100%;
+    }
+  }
+}
+
+.row-feedback {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  margin: 0;
+  padding: 25px 15px;
+
+  .icon-feedback {
+    font-weight: 300;
+    z-index: 999;
+    height: 1em;
+    color: $icon-color;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+
+    &:hover {
+      color: black;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+
+  .col-feedback {
+    width: 50%;
+    padding: 0 10px;
+
+    .feedback-content-con {
+      width: 100%;
+      padding: 0 40px;
+      font-family: $font_UTM_BryantLG;
+      border-radius: 18px;
+      margin: 0;
+      font-weight: 600;
+      position: relative;
+      border: 0.5px solid $border-feedback;
+    }
+  }
+}
+
+.fa-chevron-circle-left {
+  left: 10px;
+}
+
+.fa-chevron-circle-right {
+  right: 10px;
+}
+
+.feedback-content {
+  color: $txt-color;
+  border-left: 2px $color-feedback solid;
+  padding-left: 15px;
+  margin: 30px 0;
+  font-size: 16px;
+}
+
+.img-down {
+  position: absolute;
+  bottom: -25px;
+  left: 38px;
+}
+
+.row-user {
+  margin: 0;
+
+  .user-feedback {
+    padding: 1em 4em;
+
+    .col-ava-user {
+      margin-right: 1em;
+      margin-top: 10px;
+    }
+  }
+
+  .col-info-user {
+    .user-name-feedback {
+      margin: 0;
+      font-family: $font_UTM_BryantLG;
+      font-size: 20px;
+      color: $txt-bg-color;
+      -webkit-text-stroke-width: 1px;
+      font-weight: 600;
+      -webkit-text-stroke-width: 1px;
+    }
+
+    .course-name-feedback {
+      margin: 0;
+      font-family: $font_UTM_BryantLG;
+      font-size: 18px;
+    }
+
+    .checked {
+      color: orange;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .feedback {
+    .row-feedback-title {
+      .feedback-title {
+        font-size: 50px;
+        -webkit-text-stroke-width: 2px;
+        font-weight: unset;
+      }
+    }
+
+    .row-feedback-sub {
+      .feedback-sub {
+        width: 72%;
+        margin: 0;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .col-feedback-left {
+    display: none;
+  }
+
+  .row-feedback {
+    .col-feedback {
+      width: 100%;
+    }
+  }
+
+  .feedback-content {
+    margin: 25px 0;
+  }
+
+  .row-user .user-feedback {
+    max-width: 100%;
+    flex: unset;
+    padding: 0 4em;
+  }
+
+  .img-down {
+    width: 7%;
+    bottom: -21px;
+  }
+}
+
+@media only screen and (max-width: 424px) {
+  .feedback {
+    margin: 2em auto;
+
+    .row-feedback-title {
+      .feedback-title {
+        font-size: 40px;
+      }
+    }
+
+    .row-feedback-sub {
+      width: unset;
+
+      .feedback-sub {
+        width: 81%;
+        margin: 0;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .slide-feedback-con .carousel-inner {
+    width: 100%;
+  }
+
+  .col-feedback-left {
+    display: none;
+  }
+
+  .row-feedback {
+    padding: 8px 15px;
+
+    .col-feedback {
+      width: 100%;
+
+      .feedback-content-con {
+        padding: 0 25px;
+      }
+    }
+  }
+
+  .icon-feedback {
+    font-size: 1.5em;
+
+    &:hover {
+      color: black;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+
+  .feedback-content {
+    margin: 25px 0;
+    font-size: 12px;
+  }
+
+  .row-user .user-feedback {
+    max-width: 100%;
+    flex: unset;
+  }
+
+  .row-user .col-info-user {
+    .user-name-feedback {
+      font-size: 16px;
+    }
+
+    .course-name-feedback {
+      font-size: 14px;
+    }
+  }
+
+  .img-down {
+    bottom: -14px;
+  }
+}

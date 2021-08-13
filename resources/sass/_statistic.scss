@@ -1,0 +1,78 @@
+.statistic {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6em 0;
+
+  .row-statistic-title {
+    .statistic-title {
+      font-size: 80px;
+      font-weight: 800;
+      font-family: $font_UTM_BryantLG;
+      color: $txt-bg-color;
+      border-bottom: 5px $bg-color solid;
+      -webkit-text-stroke-width: 2px;
+    }
+  }
+
+  .row-statistic-index {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.col-statistic-index {
+  .statistic-courses {
+    font-size: 60px;
+    font-weight: 600;
+    color: $txt-color;
+    font-family: $font_UTM_BryantLG;
+  }
+
+  .statistic-index {
+    color: $bg-color;
+    font-family: $font_UTM_BryantLG;
+    font-size: 60px;
+    font-weight: 600;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .statistic {
+    padding: 3em 0;
+
+    .row-statistic-title {
+      .statistic-title {
+        font-size: 45px;
+      }
+    }
+  }
+
+  .col-statistic-index {
+    .statistic-courses,
+    .statistic-index {
+      font-size: 40px;
+    }
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .statistic {
+    padding: 3em 0;
+
+    .row-statistic-title {
+      .statistic-title {
+        font-size: 45px;
+      }
+    }
+  }
+
+  .col-statistic-index {
+    .statistic-courses,
+    .statistic-index {
+      font-size: 40px;
+    }
+  }
+}

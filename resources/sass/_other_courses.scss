@@ -1,0 +1,160 @@
+.other-courses {
+  padding: 0;
+  .container-title {
+    text-align: center;
+
+    .txt-container-title {
+      display: inline-block;
+      margin: 100px 0 60px 0;
+      font-size: 80px;
+      -webkit-text-stroke-width: 3px;
+      font-weight: 900;
+      color: $txt-bg-color;
+      border-bottom: 5px $bg-color solid;
+      font-family: $font_UTM_BryantLG;
+    }
+  }
+
+  .row-other-courses {
+    margin: 0 0 30px 0;
+
+    .col-courses {
+    }
+  }
+}
+
+.bg-css {
+  background: $bg-css;
+  height: 200px;
+  @include bg-card;
+
+  .img-css {
+    width: 70%;
+  }
+}
+
+.bg-ruby {
+  background: $bg-ruby;
+  height: 200px;
+  @include bg-card;
+
+  .img-ruby {
+    width: 70%;
+  }
+}
+
+.bg-java {
+  background: $bg-java;
+  height: 200px;
+  @include bg-card;
+
+  .img-java {
+    width: 70%;
+  }
+}
+
+.all-courses {
+  text-align: center;
+
+  .btn-all-courses {
+    color: $bg-color2;
+    text-decoration: none;
+    font-size: 40px;
+    -webkit-text-stroke-width: 2px;
+    font-family: $font_UTM_BryantLG;
+
+    &:hover {
+      letter-spacing: 0.5px;
+    }
+    .arrow-icon {
+      font-weight: 300;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .other-courses {
+    .container-title {
+      .txt-container-title {
+        margin: 55px 0 40px 0;
+        font-size: 48px;
+        -webkit-text-stroke-width: 2px;
+        font-weight: unset;
+      }
+    }
+
+    .row-other-courses {
+      width: 100%;
+      margin: 0 0 20px 0;
+
+      .col-courses {
+        display: flex;
+        justify-content: center;
+        padding: 5px;
+      }
+    }
+  }
+
+  .bg-css {
+    height: 125px;
+    background-size: contain;
+  }
+
+  .bg-ruby {
+    height: 125px;
+    background-size: contain;
+  }
+
+  .bg-java {
+    height: 125px;
+    background-size: contain;
+  }
+
+  .all-courses {
+    .btn-all-courses {
+      font-size: 23px;
+    }
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .other-courses {
+    .container-title {
+      .txt-container-title {
+        margin: 25px 0 20px 0;
+        font-size: 38px;
+      }
+    }
+
+    .row-other-courses {
+      width: 100%;
+      margin: 0;
+
+      .col-courses {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  .bg-css {
+    height: 125px;
+    background-size: contain;
+  }
+
+  .bg-ruby {
+    height: 125px;
+    background-size: contain;
+  }
+
+  .bg-java {
+    height: 125px;
+    background-size: contain;
+  }
+
+  .all-courses {
+    .btn-all-courses {
+      font-size: 22px;
+    }
+  }
+}
