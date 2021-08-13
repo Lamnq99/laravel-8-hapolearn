@@ -51,9 +51,9 @@ class LoginController extends Controller
             'password' => $request->password,
         ];
 
-        $login = Auth::attempt($credentials, $remember);
+        $isLogined = Auth::attempt($credentials, $remember);
 
-        if (!$login) {
+        if (!$isLogined) {
             $error = "Email or password you entered is incorrect";
             return redirect()->back()->withErrors($error);
         }
