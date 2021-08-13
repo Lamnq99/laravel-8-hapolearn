@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function () {
   $("#messenger").click(function () {
     if ($("#messenger-box").css("display") == "none") {
       $("#messenger-box").css({ "display": "flex" });
@@ -10,8 +10,4 @@ $(document).ready(function () {
   $(".icon-close").click(function () {
     $("#messenger-box").css({ "display": "none" });
   });
-});
-
-$(document).on('click', '.pagination a', function () {
-  //your code
 });
