@@ -16,11 +16,11 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link text-secondary active btn-header" href="#">Home<span
+                        <a class="nav-link text-secondary active btn-header" href="/">Home<span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-secondary btn-header" href="#">All Courses</a>
+                        <a class="nav-link text-secondary btn-header" href="allcourses">All Courses</a>
                     </li>
                     @if (!Auth::check())
                     <li class="nav-item">

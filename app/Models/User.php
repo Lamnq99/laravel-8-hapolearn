@@ -57,7 +57,7 @@ class User extends Authenticatable
 
     public function courses()
     {
-        return $this->belongsToMany(Course::class, 'user_courses', 'lesson_id', 'user_id');
+        return $this->belongsToMany(Course::class, 'course_user', 'user_id', 'course_id');
     }
 
     public function lessons()
@@ -68,5 +68,10 @@ class User extends Authenticatable
     public function feedback()
     {
         return $this->hasMany(Feedback::class, 'user_id');
+    }
+
+    public function scopeMentor($query)
+    {
+        return $query->where('role', User::ROLE['mentor']);
     }
 }

@@ -52,7 +52,6 @@
   padding: 25px 15px;
 
   .icon-feedback {
-    font-weight: 300;
     z-index: 999;
     height: 1em;
     color: $icon-color;
@@ -85,11 +84,11 @@
 }
 
 .fa-chevron-circle-left {
-  left: 10px;
+  left: 0;
 }
 
 .fa-chevron-circle-right {
-  right: 10px;
+  right: 0;
 }
 
 .feedback-content {

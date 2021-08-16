@@ -9,7 +9,8 @@ require('./components/header');
 require('./components/popover');
 require('./components/messenger');
 require('./components/modal');
-
+require('./components/select2');
+require('./components/filter');
 
 window.Vue = require('vue').default;
 

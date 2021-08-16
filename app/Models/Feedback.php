@@ -11,6 +11,8 @@ class Feedback extends Model
     use HasFactory;
     use SoftDeletes;
 
+    public $table = "feedbacks";
+
     protected $fillable = [
         'user_id',
         'course_id',
@@ -21,16 +23,16 @@ class Feedback extends Model
 
     public function courses()
     {
-        return $this->belongsToMany(Course::class, 'course_id', 'feedback_id');
+        return $this->belongsToMany(Course::class, 'feedback_id', 'course_id');
     }
 
     public function lessons()
     {
-        return $this->belongsToMany(Lesson::class, 'lesson_id', 'feedback_id');
+        return $this->belongsToMany(Lesson::class, 'feedback_id', 'lesson_id');
     }
 
     public function users()
     {
-        return $this->belongsToMany(User::class, 'user_id', 'feedback_id');
+        return $this->belongsToMany(User::class, 'feedback_id', 'user_id');
     }
 }
