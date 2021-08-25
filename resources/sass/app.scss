@@ -1,16 +1,18 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
 //Fontawesome
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/brands';
 @import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
 @import 'variables';
 
-@import 'header', 'banner', 'courses', 'other_courses', 'why_hapo', 'feedback', 'become_member', 'statistic', 'footer', 'messager', 'login_register';
+@import 'header', 'banner', 'courses', 'other_courses', 'why_hapo', 'feedback', 'become_member', 'statistic', 'footer', 'messager', 'login_register', 'all_courses';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+@import "~select2/dist/css/select2.min.css";

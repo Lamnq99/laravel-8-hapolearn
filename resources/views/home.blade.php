@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
 <section class="banner container-fluid p-0">
     <div class="bg-banner"></div>
     <div class="banner-contents">
@@ -151,9 +150,8 @@
         <p class="feedback-title">Feedback</p>
     </div>
     <div class="row row-feedback-sub">
-        <p class="feedback-sub">What other students turned professionals have to say about us<br>after learning with
-            us
-            and reaching their goals
+        <p class="feedback-sub">What other students turned professionals have to say about us
+            <br>after learning with us and reaching their goals
         </p>
     </div>
     <div id="demo" class="carousel slide slide-feedback-con" data-ride="carousel">
@@ -165,9 +163,8 @@
                     <div class="col-feedback col-feedback-left">
                         <div class="feedback-content-con">
                             <p class="feedback-content">“A wonderful course on how to start. Eddie beautifully
-                                conveys all essentials of a
-                                becoming a good Angular developer. Very glad to have taken this course. Thank you
-                                Eddie Bryan.”
+                                conveys all essentials of a becoming a good Angular developer.
+                                Very glad to have taken this course. Thank you Eddie Bryan.”
                             </p>
                             <img src="{{ asset('images/icon-down.png') }}" class="img-down" alt="img">
                         </div>
@@ -175,9 +172,8 @@
                     <div class="col-feedback col-feedback-right">
                         <div class="row feedback-content-con">
                             <p class="feedback-content">“A wonderful course on how to start. Eddie beautifully
-                                conveys all essentials of a
-                                becoming a good Angular developer. Very glad to have taken this course. Thank you
-                                Eddie Bryan.”
+                                conveys all essentials of a becoming a good Angular developer.
+                                Very glad to have taken this course. Thank you Eddie Bryan.”
                             </p>
                             <img src="{{ asset('images/icon-down.png') }}" class="img-down" alt="img">
                         </div>
