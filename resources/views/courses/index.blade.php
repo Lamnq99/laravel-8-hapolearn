@@ -49,10 +49,10 @@
                         <select name="learner" id="select-learner" class="js-states form-control inp-filter">
                             <option value="">Learner</option>
                             <option value="{{ config('constants.options.ascending') }}" 
-                            @if (request('learner')==config('constants.options.ascending')) selected @endif>Ascending
+                            @if (request('learner') == config('constants.options.ascending')) selected @endif>Ascending
                             </option>
                             <option value="{{ config('constants.options.decrease') }}" 
-                            @if (request('learner')==config('constants.options.decrease')) selected @endif>Decrease
+                            @if (request('learner') == config('constants.options.decrease')) selected @endif>Decrease
                             </option>
                         </select>
                     </div>
@@ -60,10 +60,10 @@
                         <select name="times" id="select-time" class="js-states form-control inp-filter">
                             <option value="">Time</option>
                             <option value="{{ config('constants.options.ascending') }}" 
-                            @if (request('times')==config('constants.options.ascending')) selected @endif>Ascending
+                            @if (request('times') == config('constants.options.ascending')) selected @endif>Ascending
                             </option>
                             <option value="{{ config('constants.options.decrease') }}" 
-                            @if (request('times')==config('constants.options.decrease')) selected @endif>Decrease
+                            @if (request('times') == config('constants.options.decrease')) selected @endif>Decrease
                             </option>
                         </select>
                     </div>
@@ -71,10 +71,10 @@
                         <select name="lessons" id="select-lessons" class="js-states form-control inp-filter">
                             <option value="">Lessons</option>
                             <option value="{{ config('constants.options.ascending') }}" 
-                            @if (request('lessons')==config('constants.options.ascending')) selected @endif>Ascending
+                            @if (request('lessons') == config('constants.options.ascending')) selected @endif>Ascending
                             </option>
                             <option value="{{ config('constants.options.decrease') }}" 
-                            @if (request('lessons')==config('constants.options.decrease')) selected @endif>Decrease
+                            @if (request('lessons') == config('constants.options.decrease')) selected @endif>Decrease
                             </option>
                         </select>
                     </div>
@@ -94,10 +94,10 @@
                         <select name="review" id="select-review" class="js-states form-control inp-filter">
                             <option value="">Review</option>
                             <option value="{{ config('constants.options.ascending') }}" 
-                            @if (request('review')==config('constants.options.ascending')) selected @endif>Ascending
+                            @if (request('review') == config('constants.options.ascending')) selected @endif>Ascending
                             </option>
                             <option value="{{ config('constants.options.decrease') }}" 
-                            @if (request('review')==config('constants.options.decrease')) selected @endif>Decrease
+                            @if (request('review') == config('constants.options.decrease')) selected @endif>Decrease
                             </option>
                         </select>
                     </div>
@@ -110,13 +110,9 @@
     </form>
 
     <div class="row row-all-courses">
-        @if (count($courses)>0)
         @foreach ($courses as $course)
         @include('courses._course', $course)
         @endforeach
-        @else
-        <h3>Not found the course</h3>
-        @endif
     </div>
     <div class="pagination-courses">
         {{ $courses->appends($_GET)->links('pagination::bootstrap-4') }}
