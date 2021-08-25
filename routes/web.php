@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,10 +17,12 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('logout', [LogoutController::class, 'getLogout'])->name('logout');
+Route::get('logout', [LogoutController::class, 'getLogout']);
+
+Route::get('allcourses', [CourseController::class, 'index']);
+
+Route::get('search', [CourseController::class, 'search'])->name('search');
 
 Auth::routes();
