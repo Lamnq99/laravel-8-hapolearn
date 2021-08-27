@@ -15,7 +15,7 @@ class RenameTable extends Migration
     {
         Schema::rename('user_courses', 'course_user');
         Schema::rename('tag_courses', 'course_tag');
-        Schema::rename('user_lessons', 'lesson_user');
+        Schema::rename('user_lesson', 'lesson_user');
     }
 
     /**
@@ -27,5 +27,6 @@ class RenameTable extends Migration
     {
         Schema::rename('course_user', 'user_courses');
         Schema::rename('course_tag', 'tag_courses');
+        Schema::rename('lesson_user', 'user_lessons');
     }
 }

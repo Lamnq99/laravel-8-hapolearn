@@ -62,7 +62,7 @@ class User extends Authenticatable
 
     public function lessons()
     {
-        return $this->belongsToMany(Lesson::class, 'users_lessons', 'lesson_id', 'user_id');
+        return $this->belongsToMany(Lesson::class, 'lesson_user', 'user_id', 'lesson_id');
     }
 
     public function feedback()
@@ -73,5 +73,10 @@ class User extends Authenticatable
     public function scopeMentor($query)
     {
         return $query->where('role', User::ROLE['mentor']);
+    }
+
+    public function ducuments()
+    {
+        return $this->belongsToMany(Document::class, 'document_users', 'user_id', 'document_id');
     }
 }

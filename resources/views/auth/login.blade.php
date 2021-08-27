@@ -21,7 +21,7 @@
                     {{ old('remember') ? 'checked' : '' }}>
                 <label class="form-check-label" for="remember-me">Remember me
             </div>
-            <a href="#" onclick="return false" class="forgot-pass">Forgot password</a>
+            <a href="{{route('password.request')}}" class="forgot-pass">Forgot password</a>
         </div>
         <div>
             <button type="submit" class="btn-login">{{ __('Login') }}</button>

@@ -23,16 +23,22 @@ class Feedback extends Model
 
     public function courses()
     {
-        return $this->belongsToMany(Course::class, 'feedback_id', 'course_id');
+        return $this->belongsTo(Course::class, 'course_id');
+    }
+
+    public function scopeFeedbacksOfCourse($query, $courseId)
+    {
+        $query->leftJoin('users', 'feedbacks.user_id', 'users.id')
+        ->where('course_id', '=', $courseId);
     }
 
     public function lessons()
     {
-        return $this->belongsToMany(Lesson::class, 'feedback_id', 'lesson_id');
+        return $this->belongsTo(Lesson::class, 'lesson_id');
     }
 
     public function users()
     {
-        return $this->belongsToMany(User::class, 'feedback_id', 'user_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

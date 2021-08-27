@@ -23,33 +23,15 @@
   }
 }
 
-.bg-css {
+.bg-courses {
   background: $bg-css;
   height: 200px;
   @include bg-card;
 
-  .img-css {
-    width: 70%;
-  }
-}
-
-.bg-ruby {
-  background: $bg-ruby;
-  height: 200px;
-  @include bg-card;
-
-  .img-ruby {
-    width: 70%;
-  }
-}
-
-.bg-java {
-  background: $bg-java;
-  height: 200px;
-  @include bg-card;
-
-  .img-java {
-    width: 70%;
+  .img-courses {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px 5px 0 0;
   }
 }
 
@@ -66,7 +48,7 @@
     &:hover {
       letter-spacing: 0.5px;
     }
-    
+
     .arrow-icon {
       font-weight: 300;
     }

@@ -32,6 +32,13 @@ class Course extends Model
         return $this->lessons()->count();
     }
 
+    public function scopeInforLessons($query, $id)
+    {
+        $query->join('lessons', 'courses.id', '=', 'lessons.course_id')
+            ->select('lessons.*')
+            ->where('lessons.course_id', '=', $id);
+    }
+
     public function getCourseTimeAttribute()
     {
         $totalTimeCourse = $this->lessons()->sum('time');
@@ -42,7 +49,7 @@ class Course extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class, 'course_user', 'course_id', 'user_id');
+        return $this->belongsToMany(User::class, 'course_user', 'course_id', 'user_id')->withTimestamps();
     }
 
     public function getNumberUserStudentAttribute()
@@ -50,14 +57,54 @@ class Course extends Model
         return $this->users()->where('role', User::ROLE['student'])->count();
     }
 
+    public function scopeMentorOfCourse($query, $id)
+    {
+        $query->leftJoin('course_user', 'courses.id', 'course_user.course_id')
+            ->leftJoin('users', 'course_user.user_id', 'users.id')
+            ->where('users.role', User::ROLE['mentor'])
+            ->where('course_user.course_id', $id);
+    }
+
     public function tags()
     {
         return $this->belongsToMany(Tag::class, 'course_tag', 'course_id', 'tag_id');
     }
 
+    public function scopeTagsCourse($query, $id)
+    {
+        $query->leftJoin('course_tag', 'courses.id', 'course_tag.course_id')
+            ->leftJoin('tags', 'course_tag.tag_id', 'tags.id')
+            ->where('course_tag.course_id', $id);
+    }
+
     public function feedback()
     {
         return $this->hasMany(Feedback::class, 'course_id');
+    }
+
+    public function getOneStarAttribute()
+    {
+        return $this->feedback()->where('rate', '=', 1)->count();
+    }
+
+    public function getTwoStarAttribute()
+    {
+        return $this->feedback()->where('rate', '=', 2)->count();
+    }
+
+    public function getThreeStarAttribute()
+    {
+        return $this->feedback()->where('rate', '=', 3)->count();
+    }
+
+    public function getFourStarAttribute()
+    {
+        return $this->feedback()->where('rate', '=', 4)->count();
+    }
+
+    public function getFiveStarAttribute()
+    {
+        return $this->feedback()->where('rate', '=', 5)->count();
     }
 
     public function scopeFilter($query, $data)
@@ -134,5 +181,10 @@ class Course extends Model
                     ->orderByDesc('rating');
             }
         }
+    }
+
+    public function scopeShowOtherCourses($query, $courseId)
+    {
+        $query->where('id', '<>', $courseId)->limit(5);
     }
 }
