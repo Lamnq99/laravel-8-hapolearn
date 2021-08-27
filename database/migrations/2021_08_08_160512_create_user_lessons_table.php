@@ -13,7 +13,7 @@ class CreateUserLessonsTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_lessons', function (Blueprint $table) {
+        Schema::create('user_lesson', function (Blueprint $table) {
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('lesson_id');
             $table->integer('learned')->default(0)->nullable()->comment("1: hoc; 2: chua hoc");
@@ -29,6 +29,6 @@ class CreateUserLessonsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_lessons');
+        Schema::dropIfExists('user_lesson');
     }
 }

@@ -2,7 +2,11 @@
 
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LessonController;
+use App\Http\Controllers\ReplyReviewController;
+use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,8 +25,26 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('logout', [LogoutController::class, 'getLogout']);
 
-Route::get('allcourses', [CourseController::class, 'index']);
+Route::get('allcourses', [CourseController::class, 'index'])->name('allcourses');
 
 Route::get('search', [CourseController::class, 'search'])->name('search');
+
+Route::get('allcourses/coursedetail/{id}', [CourseController::class, 'detail'])->name('coursedetail');
+
+Route::get('allcourses/coursedetail/{id}/search', [LessonController::class, 'search'])->name('filterdetail');
+
+Route::get('insert/{id}', [CourseController::class, 'join'])->middleware('login');
+
+Route::post('/addreview', [ReviewController::class, 'add'])->middleware('login');
+
+Route::post('/replyreview', [ReplyReviewController::class, 'reply'])->middleware('login');
+
+Route::get('leave/{id}', [CourseController::class, 'leave'])->middleware('login');
+
+Route::get('allcourses/coursedetail/lesson/{id}', [LessonController::class, 'index']);
+
+Route::get('/view/{file}', [DocumentController::class, 'show']);
+
+Route::post('/learning', [DocumentController::class, 'learning']);
 
 Auth::routes();

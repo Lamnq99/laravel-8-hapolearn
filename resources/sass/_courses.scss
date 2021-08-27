@@ -17,33 +17,14 @@
   box-shadow: $box-shadow;
 }
 
-.bg-html {
+.bg-courses {
   background: $bg-html;
   height: 200px;
   @include bg-card;
 
-  .img-html {
-    width: 70%;
-  }
-}
-
-.bg-laravel {
-  background: $bg-laravel;
-  height: 200px;
-  @include bg-card;
-
-  .img-laravel {
-    width: 55%;
-  }
-}
-
-.bg-php {
-  background: $bg-php;
-  height: 200px;
-  @include bg-card;
-
-  .img-php {
-    width: 70%;
+  .img-courses {
+    width: 100%;
+    border-radius: 5px 5px 0 0 ;
   }
 }
 
@@ -67,6 +48,7 @@
     color: $txt-color;
     margin-bottom: 0.5rem;
     width: 80%;
+    height: 88px;
     @include three-dot;
   }
 
