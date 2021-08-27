@@ -3,6 +3,8 @@
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LessonController;
+use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,5 +26,15 @@ Route::get('logout', [LogoutController::class, 'getLogout']);
 Route::get('allcourses', [CourseController::class, 'index']);
 
 Route::get('search', [CourseController::class, 'search'])->name('search');
+
+Route::get('allcourses/coursedetail/{id}', [CourseController::class, 'detail'])->name('coursedetail');
+
+Route::get('allcourses/coursedetail/{id}/search', [LessonController::class, 'search'])->name('filterdetail');
+
+Route::get('insert/{id}', [CourseController::class, 'join'])->middleware('login');
+
+Route::post('/addreview', [ReviewController::class, 'add'])->middleware('login');
+
+Route::post('/replyreview', [ReplyReviewController::class, 'reply'])->middleware('login');
 
 Auth::routes();
