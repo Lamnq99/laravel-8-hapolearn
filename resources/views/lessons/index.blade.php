@@ -8,17 +8,6 @@
                     <div class="img-container">
                         <img src="{{ $course->img_path }}" alt="anh">
                     </div>
-                    <div class="row p-0 row-progress">
-                        <div class="col-lg-2 align-self-center col-txt">
-                            <p>Progress :</p>
-                        </div>
-                        <div class="progress p-0 col-lg-9 align-self-center">
-                            <div class="progress-bar" id="progress" role="progressbar" aria-valuenow="{{$percentage}}" aria-valuemin="0"
-                                aria-valuemax="100" style="width:{{$percentage}}%">
-                                <span  id="show-percentage">{{$percentage}}%</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="col-lg-4 detail-lesson-of-course">
                     <div class="col-lg-12 col-show-other">
@@ -66,7 +55,7 @@
                                 <p>Tags :</p>
                             </div>
                             <div class="col-lg-7 pl-0 align-self-center col-txt col-txt-tags">
-                                <p>@foreach ($tags as $tag) {{ $tag->content }} @endforeach</p>
+                                <p>@foreach ($tags as $tag) #{{ $tag->content }} @endforeach</p>
                             </div>
                         </div>
                         <hr>
@@ -84,7 +73,7 @@
                         <hr>
                         <div class="row row-detail">
                             <div class="col-lg 12 btn-leave-course">
-                                <a href="/leave/{{ $course->id }}">Leave the course</a>
+                                <a href="">Leave the course</a>
                             </div>
                         </div>
                     </div>
@@ -121,7 +110,8 @@
                                 @include('lessons._document', $documents)
                             </div>
                             <div id="reviews" class="tab-pane">
-                                <h1>Chưa hoàn thành</h1>
+                                <h1>Hello</h1>
+                                {{-- @include('courses._tab_review') --}}
                             </div>
                         </div>
                     </div>

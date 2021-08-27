@@ -5,10 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use App\Models\Document;
 use App\Models\DocumentUser;
-<<<<<<< HEAD
 use App\Models\Feedback;
-=======
->>>>>>> forgot-password
 use App\Models\Lesson;
 use App\Models\User;
 use App\Models\UserCourse;
@@ -41,21 +38,19 @@ class LessonController extends Controller
         $mentors = Course::mentorOfCourse($id)->get();
         $lessons = Lesson::search($request->all())->paginate(config('constants.pagination_lessons'));
         $isJoined = UserCourse::joined($id)->first() ? true : false;
-<<<<<<< HEAD
+
         $reviews  = Feedback::feedbacksOfCourse($course->id)->get();
         $totalRate  = Feedback::feedbacksOfCourse($course->id)->sum('rate');
         $avgRating = round($totalRate / $reviews->count());
-=======
->>>>>>> forgot-password
+
+
 
         if ($request->has('key_detail_course')) {
             $keyword = request()->get('key_detail_course');
         }
 
-<<<<<<< HEAD
+
         return view('courses.course_detail', compact('course', 'lessons', 'tags', 'otherCourses', 'mentors', 'keyword', 'isJoined', 'reviews', 'totalRate', 'avgRating'));
-=======
-        return view('courses.course_detail', compact('course', 'lessons', 'tags', 'otherCourses', 'mentors', 'keyword', 'isJoined'));
->>>>>>> forgot-password
+
     }
 }

@@ -38,6 +38,7 @@ class CourseController extends Controller
         $tags = Tag::all();
         $courses = Course::filter($request->all())->paginate(config('constants.pagination'));
 
+        
         return view('courses.index', compact('courses', 'mentors', 'tags', 'keyword'));
     }
 
