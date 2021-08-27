@@ -20,11 +20,11 @@
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-secondary btn-header" href="allcourses">All Courses</a>
+                        <a class="nav-link text-secondary btn-header" href="/allcourses">All Courses</a>
                     </li>
                     @if (!Auth::check())
                     <li class="nav-item">
-                        <a class="nav-link text-secondary btn-header" href="#" data-toggle="modal"
+                        <a class="nav-link text-secondary btn-header" id="btn-regis-login" href="#" data-toggle="modal"
                             data-target="#myModal">Login/Register</a>
                     </li>
                     @endif

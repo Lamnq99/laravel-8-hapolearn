@@ -1,8 +1,9 @@
 $(function () {
-  $("#btn-reset-filter").on('click', function () {
+  $("#btn-reset-filter").on('click', function (e) {
+    e.preventDefault();
     $("#filter-search").val("");
     $(".inp-filter").val("");
-    $(".btn-latest").prop("checked", false);
-    $(".btn-oldest").prop("checked", false);
+    $("#newest").prop('checked',false);
+    $("#oldest").prop('checked',false);
   });
 });
