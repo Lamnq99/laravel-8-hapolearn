@@ -35,8 +35,13 @@ class Course extends Model
     public function scopeInforLessons($query, $id)
     {
         $query->join('lessons', 'courses.id', '=', 'lessons.course_id')
+<<<<<<< HEAD
             ->select('lessons.*')
             ->where('lessons.course_id', '=', $id);
+=======
+        ->select('lessons.*')
+        ->where('lessons.course_id', '=', $id);
+>>>>>>> forgot-password
     }
 
     public function getCourseTimeAttribute()
@@ -185,6 +190,10 @@ class Course extends Model
 
     public function scopeShowOtherCourses($query, $courseId)
     {
+<<<<<<< HEAD
         $query->where('id', '<>', $courseId)->limit(5);
+=======
+            $query->where('id', '<>', $courseId)->limit(5);
+>>>>>>> forgot-password
     }
 }

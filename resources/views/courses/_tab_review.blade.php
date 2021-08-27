@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <div class="container-fluid review-container">
     <div class="row total-review-container">
         <p class="total-review-txt">{{ $reviews->count() }} Reviews</p>
@@ -193,6 +193,3 @@
         </div>
     </div>
 </div>
-=======
-<h1>Chưa hoàn thành</h1>
->>>>>>> lesson-detail

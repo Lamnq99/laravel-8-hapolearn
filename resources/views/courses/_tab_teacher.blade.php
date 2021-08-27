@@ -6,11 +6,7 @@
         @foreach ($mentors as $item)
         <div class="row row-infor-mentor">
             <div class="col-lg-2 pr-0 col-ava-mentor">
-<<<<<<< HEAD
-                <img src="{{ asset('images/cucu.png') }}" alt="anh">
-=======
                 <img src="{{ asset($item->img_path) }}" alt="anh">
->>>>>>> lesson-detail
             </div>
             <div class="col-lg-4 align-self-center infor-mentor">
                 <div class="row name-mentor">{{$item->name}}</div>

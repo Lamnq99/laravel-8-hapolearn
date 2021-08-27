@@ -88,7 +88,7 @@
                     </div>
                     <hr>
                     <div class="row row-detail">
-                        <div class="col-lg-2 align-self-center cf424108ol-icon">
+                        <div class="col-lg-2 align-self-center col-icon">
                             <img src="{{ asset('images/tags.png') }}" alt="">
                         </div>
                         <div class="col-lg-3 pr-0 align-self-center col-txt">
