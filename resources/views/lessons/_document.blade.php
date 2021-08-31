@@ -21,7 +21,7 @@
                     <a href="" class="title">{{$item->description}}</a>
                 </div>
                 <div class="col-lg-5 button-preview-container align-self-center">
-                    <a href="{{url('view', $item->id)}}" target="_blank" rel="noopener norefer">Preview</a>
+                    <a href="{{url('view', $item->id)}}" id="btn-preview" target="_blank" rel="noopener norefer">Preview</a>
                 </div>
             </div>
             @endforeach
