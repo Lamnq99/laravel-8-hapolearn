@@ -14,6 +14,12 @@ class DocumentController extends Controller
     {
         $data = Document::find($id);
 
+<<<<<<< HEAD
+=======
+
+        //dd($number);
+
+>>>>>>> lesson-detail
         return view('materials.show', compact('data'));
     }
 
@@ -24,11 +30,19 @@ class DocumentController extends Controller
 
         $totalDocuments = Lesson::documentsOfLesson($document->lesson_id)->count();
         $documentsLearned = Document::documentLearned($document->lesson_id)->get();
+<<<<<<< HEAD
         $percentage = $documentsLearned->count() / $totalDocuments * 100;
 
         return response()->json([
             'number' => $documentsLearned,
             'percentage' => round($percentage)
+=======
+        $percentage = $documentsLearned->count() / $totalDocuments *100;
+
+        return response()->json([
+            'number' => $documentsLearned,
+            'percentage' => round($percentage) 
+>>>>>>> lesson-detail
         ]);
     }
 }

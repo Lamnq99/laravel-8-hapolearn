@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const { countBy } = require("lodash");
 
 $(function () {
@@ -42,4 +43,28 @@ $(function () {
       }
     });
   });
+=======
+$(function() {
+    $(".btn-preview").on("click", function() {
+        $.ajaxSetup({
+            headers: {
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        var documentID = $(this).data("id");
+        $.ajax({
+            url: "/learning",
+            method: "POST",
+            data: {documentID : documentID},
+            dataType: "json",
+            success: function(result) {
+                // console.log(result);
+                result.number.forEach(number => {
+                    console.log("hello");
+                });
+            }
+        });
+    });
+>>>>>>> lesson-detail
 });
