@@ -192,6 +192,16 @@
     align-items: center;
     border-top: 1px solid $border-detail-color;
 
+    .icon-check-learned {
+      color: $bg-color;
+      margin-right: 15px;
+    }
+
+    .icon-check-learning{
+      color: red;
+      margin-right: 15px;
+    }
+
     a {
       background: $bg-color;
       box-shadow: $box-shadow-btn;
@@ -200,9 +210,10 @@
       font-family: $font_UTM_BryantLG;
       font-size: 15px;
       font-weight: bold;
-      width: 80px;
-      height: 30px;
+      width: 82px;
+      height: 35px;
       text-align: center;
+      line-height: 35px;
 
       &:hover {
         text-decoration: none;
