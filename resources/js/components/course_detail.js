@@ -1,5 +1,5 @@
 $(function () {
-  $('#btn-join-course').on('click', function (e) {
+  $('#btn-more').on('click', function (e) {
     if ($('#btn-regis-login').length > 0) {
       e.preventDefault();
       $("#myModal").modal("show");

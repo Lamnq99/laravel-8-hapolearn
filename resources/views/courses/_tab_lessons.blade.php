@@ -31,7 +31,7 @@
                                 <a href="/allcourses/coursedetail/lesson/{{ $lesson->id }}">Learn</a>
                                 @elseif ($learnedPart > 0 && $learnedPart < 1) 
                                 <i class="fas fa-check-circle icon-check-learning"></i>
-                                <a href="/allcourses/coursedetail/lesson/{{ $lesson->id }}">Learning
+                                <a href="/allcourses/coursedetail/lesson/{{ $lesson->id }}">Learning</a>
                                 @elseif ($learnedPart == 1)
                                 <i class="fas fa-check-circle icon-check-learned"></i>
                                 <a href="/allcourses/coursedetail/lesson/{{ $lesson->id }}">Learned</a>
