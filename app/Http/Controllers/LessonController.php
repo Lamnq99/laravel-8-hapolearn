@@ -7,7 +7,6 @@ use App\Models\Document;
 use App\Models\DocumentUser;
 use App\Models\Feedback;
 use App\Models\Lesson;
-use App\Models\User;
 use App\Models\UserCourse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

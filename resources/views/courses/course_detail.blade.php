@@ -6,7 +6,7 @@
         <div class="row row-one">
             <div class="col-lg-8">
                 <div class="img-container">
-                    <img src="{{$course->img_path}}" alt="anh">
+                    <img src="{{asset($course->img_path)}}" alt="anh">
                 </div>
             </div>
             <div class="col-lg-4">

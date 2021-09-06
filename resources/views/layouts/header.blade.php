@@ -29,7 +29,7 @@
                     </li>
                     @endif
                     <li class="nav-item">
-                        <a class="nav-link text-secondary btn-header" href="#">Profile</a>
+                        <a class="nav-link text-secondary btn-header" href="/profile">Profile</a>
                     </li>
                     @if (Auth::check())
                     <li class="nav-item">

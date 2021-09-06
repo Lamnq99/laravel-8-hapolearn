@@ -10,9 +10,11 @@
 // Variables
 @import 'variables';
 
-@import 'header', 'banner', 'courses', 'other_courses', 'why_hapo', 'feedback', 'become_member', 'statistic', 'footer', 'messager', 'login_register', 'all_courses', 'course_detail', 'lessons_detail', 'reset_password';
+@import 'header', 'banner', 'courses', 'other_courses', 'why_hapo', 'feedback', 'become_member', 'statistic', 'footer', 'messager', 'login_register', 'all_courses', 'course_detail', 'lessons_detail', 'reset_password', 'profile';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
 @import "~select2/dist/css/select2.min.css";
+
+@import '~jquery-ui/themes/base/all.css';

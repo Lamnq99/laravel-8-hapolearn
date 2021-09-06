@@ -12,9 +12,13 @@ require('./components/modal');
 require('./components/filter');
 require('./components/course_detail');
 require('./components/rating');
-require('./components/ajax_document')
-
+require('./components/ajax_document');
+require('./components/profile');
 window.Vue = require('vue').default;
+
+
+
+import 'jquery-ui/ui/widgets/datepicker.js';
 
 /**
  * The following block of code may be used to automatically register your

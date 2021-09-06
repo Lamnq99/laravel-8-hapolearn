@@ -53,6 +53,11 @@ return [
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
         ],
 
+        'ava_user' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/avatar_user'),
+        ]
+
     ],
 
     /*
@@ -68,6 +73,7 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        public_path('storage/avatar_user') => storage_path('app/public/avatar_user'),
     ],
 
 ];

@@ -3,7 +3,7 @@
       <div class="card-header col-md-12 card-allc-header">
           <div class="row-title row">
               <div class="col-2 img-course col-sm-2">
-                  <img src="{{$course->img_path}}" alt="ava-course">
+                  <img src="{{ asset($course->img_path) }}" alt="ava-course">
               </div>
               <div class="col-10 title-course col-sm-10">
                   <p class="title">{{$course->title}}</p>

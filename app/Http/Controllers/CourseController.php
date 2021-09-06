@@ -55,10 +55,15 @@ class CourseController extends Controller
         $avgRating = $reviews->count() > 0 ? round($totalRate / $reviews->count()) : 0;
         $documentsLearned = Document::documentLearned($lessons->first()->id)->get();
         $totalDocuments = Lesson::documentsOfLesson($lessons->first()->id)->get();
-        $learnedPart = $documentsLearned->count() / $totalDocuments->count();
-        //dd($totalDocuments);
 
-        return view('courses.course_detail', compact('course', 'lessons', 'tags', 'otherCourses', 'mentors', 'isJoined', 'learnedPart', 'totalDocuments', 'reviews', 'totalRate', 'avgRating'));
+        
+        if ($documentsLearned->count() != 0 && $totalDocuments->count() != 0) {
+            $learnedPart = $documentsLearned->count() / $totalDocuments->count();
+        } else {
+            $learnedPart = 0;
+        }
+
+        return view('courses.course_detail', compact('course', 'lessons', 'tags', 'otherCourses', 'mentors', 'isJoined', 'learnedPart', 'totalDocuments', 'reviews', 'totalRate', 'avgRating', 'documentsLearned'));
     }
 
     public function join($id)
