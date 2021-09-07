@@ -1,10 +1,12 @@
 $('#datepicker').datepicker({
-  dateFormat: 'dd-mm-yy',
+  dateFormat: 'yy-mm-dd',
   showButtonPanel: true,
-    changeMonth: true,
-    changeYear: true,
-    showOtherMonths: true,
-    selectOtherMonths: true
+  changeMonth: true,
+  changeYear: true,
+  showOtherMonths: true,
+  selectOtherMonths: true,
+  showButtonPanel: true,
+  yearRange: '1950:2021'
 });
 
 $("#icon-upload-ava").click(function () {

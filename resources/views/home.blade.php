@@ -15,9 +15,6 @@
     </section>
 
     <div class="background-grey container-fluid"></div>
-
-
-
     <section class="courses container">
         <div class="row row-courses">
             @foreach ($courses as $course)
@@ -247,15 +244,15 @@
         <div class="row row row-statistic-index">
             <div class="col-sm-4 col-statistic-index">
                 <p class="statistic-courses">Courses</p>
-                <p class="statistic-index">1,586</p>
+                <p class="statistic-index">{{$totalCourses}}</p>
             </div>
             <div class="col-sm-4 col-statistic-index">
                 <p class="statistic-courses">Lessons</p>
-                <p class="statistic-index">2,689</p>
+                <p class="statistic-index">{{$totalLessons}}</p>
             </div>
             <div class="col-sm-4 col-statistic-index">
                 <p class="statistic-courses">Learners</p>
-                <p class="statistic-index">16,882</p>
+                <p class="statistic-index">{{$totalUsers}}</p>
             </div>
         </div>
     </section>

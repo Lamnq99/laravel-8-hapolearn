@@ -28,8 +28,8 @@
                         <div class="progress">
                             <div class="progress-bar bg-success" role="progressbar"
                                 style="width: {{ $reviews->count() > 0 ? ($course->fiveStar / $reviews->count()) * 100 : 0 }}%"
-                                aria-valuenow="{{ $reviews->count() > 0 ? ($course->fiveStar / $reviews->count()) * 100 : 0 }}" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                aria-valuenow="{{ $reviews->count() > 0 ? ($course->fiveStar / $reviews->count()) * 100 : 0 }}"
+                                aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                     <div class="col-lg-1 pl-0 text-center align-self-center total-star-rating">{{ $course->fiveStar }}
@@ -41,8 +41,8 @@
                         <div class="progress">
                             <div class="progress-bar bg-success" role="progressbar"
                                 style="width: {{ $reviews->count() > 0 ? ($course->fourStar / $reviews->count()) * 100 : 0 }}%"
-                                aria-valuenow="{{ $reviews->count() > 0 ? ($course->fourStar / $reviews->count()) * 100 : 0 }}" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                aria-valuenow="{{ $reviews->count() > 0 ? ($course->fourStar / $reviews->count()) * 100 : 0 }}"
+                                aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                     <div class="col-lg-1 pl-0 text-center align-self-center total-star-rating">{{ $course->fourStar }}
@@ -54,11 +54,12 @@
                         <div class="progress">
                             <div class="progress-bar bg-success" role="progressbar"
                                 style="width: {{ $reviews->count() > 0 ? ($course->threeStar / $reviews->count()) * 100 : 0 }}%"
-                                aria-valuenow="{{ $reviews->count() > 0 ? ($course->threeStar / $reviews->count()) * 100 : 0 }}" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                aria-valuenow="{{ $reviews->count() > 0 ? ($course->threeStar / $reviews->count()) * 100 : 0 }}"
+                                aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
-                    <div class="col-lg-1 pl-0 text-center align-self-center total-star-rating">{{ $course->threeStar }}
+                    <div class="col-lg-1 pl-0 text-center align-self-center total-star-rating">
+                        {{ $course->threeStar }}
                     </div>
                 </div>
                 <div class="row rating-chart justify-content-around">
@@ -67,8 +68,8 @@
                         <div class="progress">
                             <div class="progress-bar bg-success" role="progressbar"
                                 style="width: {{ $reviews->count() > 0 ? ($course->twoStar / $reviews->count()) * 100 : 0 }}%"
-                                aria-valuenow="{{ $reviews->count() > 0 ? ($course->twoStar / $reviews->count()) * 100 : 0 }}" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                aria-valuenow="{{ $reviews->count() > 0 ? ($course->twoStar / $reviews->count()) * 100 : 0 }}"
+                                aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                     <div class="col-lg-1 pl-0 text-center align-self-center total-star-rating">{{ $course->twoStar }}
@@ -80,8 +81,8 @@
                         <div class="progress">
                             <div class="progress-bar bg-success index-chart" role="progressbar"
                                 style="width: {{ $reviews->count() > 0 ? ($course->oneStar / $reviews->count()) * 100 : 0 }}%"
-                                aria-valuenow="{{ $reviews->count() > 0 ? ($course->oneStar / $reviews->count()) * 100 : 0 }}" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                aria-valuenow="{{ $reviews->count() > 0 ? ($course->oneStar / $reviews->count()) * 100 : 0 }}"
+                                aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                     <div class="col-lg-1 pl-0 text-center align-self-center total-star-rating">{{ $course->oneStar }}

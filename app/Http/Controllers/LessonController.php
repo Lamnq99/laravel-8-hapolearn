@@ -24,7 +24,9 @@ class LessonController extends Controller
         $numberStudent = Course::where('courses.id', $course->id)->first();
         $documents = Lesson::documentsOfLesson($id)->get();
         $documentsLearned = Document::documentLearned($id)->get();
-        $percentage = round($documentsLearned->count() / $documents->count() * 100);
+        $percentage = $documents->count() >0 ? round($documentsLearned->count() / $documents->count() * 100) : 0;
+
+        //dd($documentsLearned);
         
         return view('lessons.index', compact('lessons', 'course', 'otherCourses', 'tags', 'numberStudent', 'mentors', 'documents', 'documentsLearned', 'percentage'));
     }
@@ -37,19 +39,18 @@ class LessonController extends Controller
         $mentors = Course::mentorOfCourse($id)->get();
         $lessons = Lesson::search($request->all())->paginate(config('constants.pagination_lessons'));
         $isJoined = UserCourse::joined($id)->first() ? true : false;
-
         $reviews  = Feedback::feedbacksOfCourse($course->id)->get();
         $totalRate  = Feedback::feedbacksOfCourse($course->id)->sum('rate');
-        $avgRating = round($totalRate / $reviews->count());
-
-
+        $avgRating = $reviews->count() > 0 ? round($totalRate / $reviews->count()) : 0;
+        $learnedPart = 0;
+        $totalDocuments = 0;
 
         if ($request->has('key_detail_course')) {
             $keyword = request()->get('key_detail_course');
         }
 
 
-        return view('courses.course_detail', compact('course', 'lessons', 'tags', 'otherCourses', 'mentors', 'keyword', 'isJoined', 'reviews', 'totalRate', 'avgRating'));
+        return view('courses.course_detail', compact('course', 'lessons', 'tags', 'otherCourses', 'mentors', 'keyword', 'isJoined', 'reviews', 'totalRate', 'avgRating', 'learnedPart', 'totalDocuments'));
 
     }
 }

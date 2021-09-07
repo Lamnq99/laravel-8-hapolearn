@@ -9,11 +9,8 @@ use App\Models\Lesson;
 use App\Models\Tag;
 use App\Models\User;
 use App\Models\UserCourse;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use PHPUnit\Framework\Constraint\Count;
 
 class CourseController extends Controller
 {
@@ -38,7 +35,6 @@ class CourseController extends Controller
         $tags = Tag::all();
         $courses = Course::filter($request->all())->paginate(config('constants.pagination'));
 
-        
         return view('courses.index', compact('courses', 'mentors', 'tags', 'keyword'));
     }
 
@@ -53,11 +49,15 @@ class CourseController extends Controller
         $reviews  = Feedback::feedbacksOfCourse($course->id)->get();
         $totalRate  = Feedback::feedbacksOfCourse($course->id)->sum('rate');
         $avgRating = $reviews->count() > 0 ? round($totalRate / $reviews->count()) : 0;
-        $documentsLearned = Document::documentLearned($lessons->first()->id)->get();
         $totalDocuments = Lesson::documentsOfLesson($lessons->first()->id)->get();
 
-        
-        if ($documentsLearned->count() != 0 && $totalDocuments->count() != 0) {
+        if (Auth::check()) {
+            $documentsLearned = Document::documentLearned($lessons->first()->id)->get();
+        } else {
+            $documentsLearned = 0;
+        }
+
+        if (Auth::check() && $documentsLearned->count() != 0 && $totalDocuments->count() != 0) {
             $learnedPart = $documentsLearned->count() / $totalDocuments->count();
         } else {
             $learnedPart = 0;

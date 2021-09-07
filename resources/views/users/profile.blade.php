@@ -78,7 +78,7 @@
                         <div class="col-lg-6">
                             <p class="edit-input-label">Date of birthday:</p>
                             <input placeholder="Select date" type="text" id="datepicker"
-                                class="form-control edit-input-profile datepicker" value="{{ $users->birthday }}">
+                                class="form-control edit-input-profile datepicker" name="fbirth" value="{{ $users->birthday }}">
                         </div>
                         <div class="col-lg-6">
                             <p class="edit-input-label">Phone:</p>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\Lesson;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -27,7 +29,10 @@ class HomeController extends Controller
     {
         $courses = Course::orderByDesc('id')->limit(3)->get();
         $otherCourses = Course::orderBy('id')->limit(3)->get();
-        
-        return view('home', compact('courses', 'otherCourses'));
+        $totalUsers = User::all()->count();
+        $totalCourses = Course::all()->count();
+        $totalLessons = Lesson::all()->count();
+        //dd($totalUsers);
+        return view('home', compact('courses', 'otherCourses', 'totalUsers', 'totalCourses', 'totalLessons'));
     }
 }

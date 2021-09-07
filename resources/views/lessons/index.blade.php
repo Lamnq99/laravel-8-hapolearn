@@ -8,6 +8,17 @@
                     <div class="img-container">
                         <img src="{{ asset($course->img_path) }}" alt="anh">
                     </div>
+                    <div class="row p-0 row-progress">
+                        <div class="col-lg-2 align-self-center col-txt">
+                            <p>Progress :</p>
+                        </div>
+                        <div class="progress p-0 col-lg-9 align-self-center">
+                            <div class="progress-bar" id="progress" role="progressbar" aria-valuenow="{{ $percentage }}"
+                                aria-valuemin="0" aria-valuemax="100" style="width:{{ $percentage }}%">
+                                <span id="show-percentage">{{ $percentage }}%</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-4 detail-lesson-of-course">
                     <div class="col-lg-12 col-show-other">
@@ -55,7 +66,7 @@
                                 <p>Tags :</p>
                             </div>
                             <div class="col-lg-7 pl-0 align-self-center col-txt col-txt-tags">
-                                <p>@foreach ($tags as $tag) #{{ $tag->content }} @endforeach</p>
+                                <p>@foreach ($tags as $tag) {{ $tag->content }} @endforeach</p>
                             </div>
                         </div>
                         <hr>
@@ -110,14 +121,12 @@
                                 @include('lessons._document', $documents)
                             </div>
                             <div id="reviews" class="tab-pane">
-                                <h1>Hello</h1>
-                                {{-- @include('courses._tab_review') --}}
+                                {{-- @include('lessons._review', $lessons) --}}
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
-
                     <div class="col-lg-12 p-0 show-other-courses-container">
                         <div class="txt-show-other-courses">
                             <p>Other Courses</p>

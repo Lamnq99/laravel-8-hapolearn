@@ -29,7 +29,7 @@ class Feedback extends Model
     public function scopeFeedbacksOfCourse($query, $courseId)
     {
         $query->leftJoin('users', 'feedbacks.user_id', 'users.id')
-        ->where('course_id', '=', $courseId);
+            ->where('course_id', '=', $courseId);
     }
 
     public function lessons()
