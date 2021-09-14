@@ -23,7 +23,7 @@ class TagCourseFactory extends Factory
     public function definition()
     {
         return [
-            'tag_id' => 5,
+            'tag_id' => 10,
             'course_id' => $this->faker->unique()->numberBetween(1, 40),
         ];
     }

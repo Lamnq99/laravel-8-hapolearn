@@ -1,6 +1,6 @@
 <div class="container-fluid review-container">
     <div class="row total-review-container">
-        <p class="total-review-txt">{{ $reviews->count() }} Reviews</p>
+        <p class="total-review-txt"></p>
     </div>
     <hr>
     <div class="row show-star">
@@ -17,7 +17,7 @@
                 @endfor
             </div>
             <div class="total-rating text-center">
-                <p>{{ $reviews->count() }} rating</p>
+                <p class="total-rating-txt"></p>
             </div>
         </div>
         <div class="col-lg-8 col-star-right">
@@ -28,8 +28,8 @@
                         <div class="progress">
                             <div class="progress-bar bg-success" role="progressbar"
                                 style="width: {{ $reviews->count() > 0 ? ($course->fiveStar / $reviews->count()) * 100 : 0 }}%"
-                                aria-valuenow="{{ $reviews->count() > 0 ? ($course->fiveStar / $reviews->count()) * 100 : 0 }}" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                aria-valuenow="{{ $reviews->count() > 0 ? ($course->fiveStar / $reviews->count()) * 100 : 0 }}"
+                                aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                     <div class="col-lg-1 pl-0 text-center align-self-center total-star-rating">{{ $course->fiveStar }}
@@ -41,8 +41,8 @@
                         <div class="progress">
                             <div class="progress-bar bg-success" role="progressbar"
                                 style="width: {{ $reviews->count() > 0 ? ($course->fourStar / $reviews->count()) * 100 : 0 }}%"
-                                aria-valuenow="{{ $reviews->count() > 0 ? ($course->fourStar / $reviews->count()) * 100 : 0 }}" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                aria-valuenow="{{ $reviews->count() > 0 ? ($course->fourStar / $reviews->count()) * 100 : 0 }}"
+                                aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                     <div class="col-lg-1 pl-0 text-center align-self-center total-star-rating">{{ $course->fourStar }}
@@ -54,11 +54,12 @@
                         <div class="progress">
                             <div class="progress-bar bg-success" role="progressbar"
                                 style="width: {{ $reviews->count() > 0 ? ($course->threeStar / $reviews->count()) * 100 : 0 }}%"
-                                aria-valuenow="{{ $reviews->count() > 0 ? ($course->threeStar / $reviews->count()) * 100 : 0 }}" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                aria-valuenow="{{ $reviews->count() > 0 ? ($course->threeStar / $reviews->count()) * 100 : 0 }}"
+                                aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
-                    <div class="col-lg-1 pl-0 text-center align-self-center total-star-rating">{{ $course->threeStar }}
+                    <div class="col-lg-1 pl-0 text-center align-self-center total-star-rating">
+                        {{ $course->threeStar }}
                     </div>
                 </div>
                 <div class="row rating-chart justify-content-around">
@@ -67,8 +68,8 @@
                         <div class="progress">
                             <div class="progress-bar bg-success" role="progressbar"
                                 style="width: {{ $reviews->count() > 0 ? ($course->twoStar / $reviews->count()) * 100 : 0 }}%"
-                                aria-valuenow="{{ $reviews->count() > 0 ? ($course->twoStar / $reviews->count()) * 100 : 0 }}" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                aria-valuenow="{{ $reviews->count() > 0 ? ($course->twoStar / $reviews->count()) * 100 : 0 }}"
+                                aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                     <div class="col-lg-1 pl-0 text-center align-self-center total-star-rating">{{ $course->twoStar }}
@@ -80,8 +81,8 @@
                         <div class="progress">
                             <div class="progress-bar bg-success index-chart" role="progressbar"
                                 style="width: {{ $reviews->count() > 0 ? ($course->oneStar / $reviews->count()) * 100 : 0 }}%"
-                                aria-valuenow="{{ $reviews->count() > 0 ? ($course->oneStar / $reviews->count()) * 100 : 0 }}" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                aria-valuenow="{{ $reviews->count() > 0 ? ($course->oneStar / $reviews->count()) * 100 : 0 }}"
+                                aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                     <div class="col-lg-1 pl-0 text-center align-self-center total-star-rating">{{ $course->oneStar }}
@@ -91,11 +92,10 @@
         </div>
     </div>
     <hr>
-
+    <div class="col-lg-12 show-all-reviews">
+        <p>Show all reviews <i class="fas fa-sort-down"></i></p>
+    </div>
     <div class="row show-cmt-container">
-        <div class="col-lg-12 show-all-reviews">
-            <p>Show all reviews <i class="fas fa-sort-down"></i></p>
-        </div>
         @foreach ($reviews as $review)
             <div class="col-lg-12 show-comment-user">
                 <div class="row comment-header justify-content-start align-items-center">
@@ -120,30 +120,51 @@
                 <div class="row comment-body justify-content-start align-items-center">
                     <p>{{ $review->content }}</p>
                 </div>
-                {{-- reply --}}
-                {{-- <div class="row reply-comment-container justify-content-end align-items-center">
-                    <div class="col-lg-11">
-                        <hr>
-                        <div class="comment-header row reply-comment-main align-items-center">
-                            <div class="ava-user-cmt text-center">
-                                <img src="{{ asset('images/cucu.png') }}" alt="avatar user">
+                <div class="row btn-reply-comment m-0 justify-content-end align-items-center">
+                    <a href="#" class="btn-reply" data-id="{{ $review->id }}" onclick="return false">Reply</a>
+                </div>
+                <div data-id="{{ $review->id }}"
+                    class="row reply-comment-container justify-content-end align-items-center">
+                    @foreach ($replies as $reply)
+                        @if ($reply->feedback_id == $review->id)
+                            <div class="col-lg-11">
+                                <hr>
+                                <div class="comment-header row reply-comment-main align-items-center">
+                                    <div class="ava-user-cmt text-center">
+                                        <img src="{{ asset('storage/avatar_user/' . $reply->img_path) }}"
+                                            alt="avatar user">
+                                    </div>
+                                    <div class="name-user-cmt text-center">
+                                        <p>{{ $reply->name }}</p>
+                                    </div>
+                                    <div class="time-user-cmt text-center">
+                                        <p>{{ $reply->created_at }}</p>
+                                    </div>
+                                </div>
+                                <div class="row pl-0 comment-body reply-comment-body">
+                                    <p>{{ $reply->content }}</p>
+                                </div>
                             </div>
-                            <div class="name-user-cmt text-center">
-                                <p>Lam Ngo Que</p>
-                            </div>
-                            <div class="time-user-cmt text-center">
-                                <p>August 4, 2020 at 1:30 pm</p>
-                            </div>
-                        </div>
-                        <div class="row pl-0 comment-body reply-comment-body">
-                            <p>
-                                Vivamus volutpat eros pulvinar velit laoreet, sit amet egestas erat dignissim. Sed quis
-                                rutrum tellus, sit amet viverra felis. Cras sagittis sem sit amet urna
-                            </p>
-                        </div>
+                        @endif
+                    @endforeach
+                </div>
+                <div class="row justify-content-end align-items-center">
+                    <div class="col-lg-11 input-reply-container">
+                        <form class="form-reply-comment {{ $review->id }}">
+                            @csrf
+                            <br>
+                            <textarea name="review" data-id="{{ $review->id }}"
+                                class="form-control input-reply-comment" rows="4"></textarea>
+                            <br>
+                            <input type="hidden" data-id="{{ $review->id }}" value="{{ $review->id }}"
+                                class="review-id-reply">
+                            <input type="hidden" data-id="{{ $review->id }}"
+                                value="{{ Auth::check() ? Auth::user()->id : '' }}" class="user-id-reply">
+                            <input class="btn-sent-reply" data-id="{{ $review->id }}" type="submit" value="Send">
+                        </form>
                     </div>
                 </div>
-                <hr> --}}
+                <hr>
             </div>
         @endforeach
     </div>
@@ -151,9 +172,8 @@
         <div class="col-lg-12 leave-review-txt">
             <p>Leave a Review</p>
         </div>
-
         <div class="col-lg-12 input-review-container">
-            <form action="/addreview/{{ $course->id }}" method="get" id="form-review">
+            <form id="form-review">
                 @csrf
                 <label class="label-input-review" for="input-review-course">Message</label>
                 <textarea name="review" id="input-review-course" class="form-control" rows="10"></textarea>
@@ -178,14 +198,14 @@
                             for="star-one">1
                             stars</label>
                     </div>
-                    <div class="align-self-center">
+                    <div class="col-lg-9 text-right align-self-center">
                         <span class="err-review">Bạn cần điền đầy đủ trước khi gửi !</span>
                     </div>
                 </div>
                 <input type="hidden" name="courseId" id="course-id" value="{{ $course->id }}">
                 <input type="hidden" name="lessonId" id="lesson-id" value="">
-                <input type="hidden" name="userId" id="user-id" value="{{ Auth::id() }}">
-                <div class="row m-0 btn-send-review justify-content-end">
+                <input type="hidden" name="userId" id="user-id" @if (Auth::check()) value="{{ Auth::user()->id }} @endif ">
+                <div class=" row m-0 btn-send-review justify-content-end">
                     <input type="submit" id="btn-send-review" value="Send">
                 </div>
             </form>

@@ -6,6 +6,7 @@ use App\Models\Course;
 use App\Models\Feedback;
 use App\Models\Document;
 use App\Models\Lesson;
+use App\Models\ReplyReview;
 use App\Models\Tag;
 use App\Models\User;
 use App\Models\UserCourse;
@@ -63,7 +64,9 @@ class CourseController extends Controller
             $learnedPart = 0;
         }
 
-        return view('courses.course_detail', compact('course', 'lessons', 'tags', 'otherCourses', 'mentors', 'isJoined', 'learnedPart', 'totalDocuments', 'reviews', 'totalRate', 'avgRating', 'documentsLearned'));
+        $replies = ReplyReview::inforReply()->get();
+
+        return view('courses.course_detail', compact('course', 'lessons', 'tags', 'otherCourses', 'mentors', 'isJoined', 'learnedPart', 'totalDocuments', 'reviews', 'totalRate', 'avgRating', 'documentsLearned', 'replies'));
     }
 
     public function join($id)

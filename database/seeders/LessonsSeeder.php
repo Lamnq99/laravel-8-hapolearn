@@ -14,6 +14,6 @@ class LessonsSeeder extends Seeder
      */
     public function run()
     {
-        Lesson::factory()->count(2500)->create();
+        Lesson::factory()->count(5000)->create();
     }
 }

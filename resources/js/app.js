@@ -14,6 +14,7 @@ require('./components/course_detail');
 require('./components/rating');
 require('./components/ajax_document');
 require('./components/profile');
+require('./components/reply_comment');
 window.Vue = require('vue').default;
 
 

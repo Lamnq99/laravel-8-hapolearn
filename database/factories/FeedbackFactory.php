@@ -28,7 +28,7 @@ class FeedbackFactory extends Factory
             'course_id' => $this->faker->numberBetween(1, 50),
             'lesson_id' => null,
             'content' => $this->faker->realText(),
-            'rate' => $this->faker->randomFloat(1, 3.5, 5)
+            'rate' => $this->faker->numberBetween(1, 5)
         ];
     }
 }

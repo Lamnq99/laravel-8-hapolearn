@@ -24,8 +24,8 @@ class UserCourseFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => $this->faker->numberBetween(6, 400),
-            'course_id' => Course::all()->random()->id
+            'user_id' => 4,
+            'course_id' => $this->faker->unique()->numberBetween(1, 100)
         ];
     }
 }

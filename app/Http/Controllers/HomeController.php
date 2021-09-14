@@ -32,7 +32,7 @@ class HomeController extends Controller
         $totalUsers = User::all()->count();
         $totalCourses = Course::all()->count();
         $totalLessons = Lesson::all()->count();
-        //dd($totalUsers);
+
         return view('home', compact('courses', 'otherCourses', 'totalUsers', 'totalCourses', 'totalLessons'));
     }
 }

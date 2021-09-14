@@ -15,14 +15,14 @@ class UserController extends Controller
         $users = User::students()->find(Auth::user()->id);
         $birthday = Carbon::parse($users->birthday)->format('d/m/Y');
         $courses = User::courseAttended()->get();
-        //dd($users);
+
         return view('users.profile', compact('users', 'birthday', 'courses'));
     }
 
     public function update(Request $request)
     {
         $data = User::find($request->fid);
-        
+
         if ($request->favauser) {
             $image = $request->favauser;
             $fileName = $image->getClientOriginalName();

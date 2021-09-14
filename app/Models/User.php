@@ -95,4 +95,9 @@ class User extends Authenticatable
             ->orderByDesc('course_id')
             ->get('courses.*');
     }
+
+    public function replyReviews()
+    {
+        return $this->hasMany(ReplyReview::class, 'user_id');
+    }
 }

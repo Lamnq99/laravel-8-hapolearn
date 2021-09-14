@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LessonController;
+use App\Http\Controllers\ReplyReviewController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UserController;
 use App\Models\Document;
@@ -36,7 +37,9 @@ Route::get('allcourses/coursedetail/{id}/search', [LessonController::class, 'sea
 
 Route::get('insert/{id}', [CourseController::class, 'join'])->middleware('login');
 
-Route::get('addreview/{id}', [ReviewController::class, 'addReview'])->middleware('login');
+Route::post('/addreview', [ReviewController::class, 'add'])->middleware('login');
+
+Route::post('/replyreview', [ReplyReviewController::class, 'reply'])->middleware('login');
 
 Route::get('leave/{id}', [CourseController::class, 'leave'])->middleware('login');
 

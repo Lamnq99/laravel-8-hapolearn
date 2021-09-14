@@ -29,6 +29,7 @@ class Feedback extends Model
     public function scopeFeedbacksOfCourse($query, $courseId)
     {
         $query->leftJoin('users', 'feedbacks.user_id', 'users.id')
+            ->select('feedbacks.*', 'users.img_path', 'users.name')
             ->where('course_id', '=', $courseId);
     }
 
@@ -40,5 +41,10 @@ class Feedback extends Model
     public function users()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function replyReviews()
+    {
+        return $this->hasMany(ReplyReview::class, 'feedback_id');
     }
 }
