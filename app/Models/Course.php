@@ -11,6 +11,8 @@ class Course extends Model
     use HasFactory;
     use SoftDeletes;
 
+    public $table = "courses";
+
     protected $fillable = [
         'title',
         'img_path',
