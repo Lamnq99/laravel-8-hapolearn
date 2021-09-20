@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserLessonsTable extends Migration
+class CreateCourseReviewTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateUserLessonsTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_lesson', function (Blueprint $table) {
-            $table->unsignedInteger('user_id');
-            $table->unsignedInteger('lesson_id');
-            $table->integer('learned')->default(0)->nullable()->comment("1: hoc; 2: chua hoc");
-            $table->timestamps();
+        Schema::create('course_review', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('course_id');
+            $table->unsignedBigInteger('feedback_id');
             $table->softDeletes();
+            $table->timestamps();
         });
     }
 
@@ -29,6 +29,6 @@ class CreateUserLessonsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_lesson');
+        Schema::dropIfExists('course_review');
     }
 }
