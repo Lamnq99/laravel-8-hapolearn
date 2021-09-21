@@ -26,15 +26,15 @@
                         <p class="txt-filter">Filter</p>
                     </div>
                     <div class="col-sm-3 btn-latest-oldest">
-                        <input type="radio" class="btn-check inp-filter" value="{{config('constants.options.newest')}}"
-                            name="sort" id="success-outlined"
+                        <input type="radio" class="btn-check" id="newest" value="{{config('constants.options.newest')}}"
+                            name="sort"
                             {{ request('sort') == "config('constants.options.newest')" ? 'checked' : '' }}>
-                        <label class="btn btn-latest label-radio" for="success-outlined">Latest</label>
+                        <label class="btn btn-latest label-radio" for="newest">Latest</label>
 
-                        <input type="radio" class="btn-check inp-filter" value="{{config('constants.options.oldest')}}"
-                            name="sort" id="danger-outlined"
+                        <input type="radio" class="btn-check" id="oldest" value="{{config('constants.options.oldest')}}"
+                            name="sort"
                             {{ request('sort') == "config('constants.options.oldest')" ? 'checked' : '' }}>
-                        <label class="btn btn-oldest label-radio" for="danger-outlined">Oldest</label>
+                        <label class="btn btn-oldest label-radio" for="oldest">Oldest</label>
                     </div>
                     <div class="col-sm-2 select-filter select-mentor ">
                         <select name="mentor" id="select-teacher" class="js-states form-control inp-filter">
