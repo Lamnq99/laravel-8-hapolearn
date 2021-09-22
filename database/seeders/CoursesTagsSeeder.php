@@ -14,6 +14,5 @@ class CoursesTagsSeeder extends Seeder
      */
     public function run()
     {
-        TagCourse::factory()->count(14)->create();
     }
 }

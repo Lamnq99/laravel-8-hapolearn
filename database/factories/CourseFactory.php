@@ -21,12 +21,5 @@ class CourseFactory extends Factory
      */
     public function definition()
     {
-        return [
-            'title' => $this->faker->unique()->name,
-            'img_path' => $this->faker->unique()->imageUrl,
-            'quizzes' => $this->faker->numberBetween(100, 10000),
-            'price' => $this->faker->randomFloat(2, 0, 1000000),
-            'description' => $this->faker->paragraph
-        ];
     }
 }
