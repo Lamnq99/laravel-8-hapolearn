@@ -23,12 +23,5 @@ class FeedbackFactory extends Factory
      */
     public function definition()
     {
-        return [
-            'user_id' => $this->faker->unique()->numberBetween(6, 1000),
-            'course_id' => $this->faker->numberBetween(1, 50),
-            'lesson_id' => null,
-            'content' => $this->faker->realText(),
-            'rate' => $this->faker->randomFloat(1, 3.5, 5)
-        ];
     }
 }

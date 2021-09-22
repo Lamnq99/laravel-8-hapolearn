@@ -21,8 +21,5 @@ class TagFactory extends Factory
      */
     public function definition()
     {
-        return [
-            'content' => $this->faker->unique()->name
-        ];
     }
 }

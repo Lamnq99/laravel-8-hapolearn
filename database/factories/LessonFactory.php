@@ -22,12 +22,5 @@ class LessonFactory extends Factory
      */
     public function definition()
     {
-        return [
-            'course_id' => Course::all()->random()->id,
-            'title' => $this->faker->unique()->name,
-            'description' => $this->faker->paragraph,
-            'requirement' => $this->faker->paragraph,
-            'time' => $this->faker->numberBetween(20, 100),
-        ];
     }
 }
